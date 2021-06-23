@@ -32,10 +32,4 @@ public class Eater : MonoBehaviour
         agent.SetDestination(target.transform.position);
     }
 
-    void OnTriggerEnter(Collider col) {
-        if(col.CompareTag("Player")) {
-            Debug.Log("Game Over!");
-        }
-    }
-
 }

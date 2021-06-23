@@ -7,9 +7,14 @@ public class CollectibleContact : MonoBehaviour
 
     void OnTriggerEnter(Collider col) {
 
-        if(col.CompareTag("Player") || col.CompareTag("Eater")){
+        if(col.CompareTag("Player")) {
 
-            //Debug.Log("Item picked up!");
+            FindObjectOfType<GameManager>().IncreasePlayerScore();
+            SpawnScript.DeleteItem();
+
+        } else if(col.CompareTag("Eater")) {
+
+            FindObjectOfType<GameManager>().IncreaseEaterScore();
             SpawnScript.DeleteItem();
             
         }
