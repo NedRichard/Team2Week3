@@ -14,9 +14,11 @@ public class SpawnScript : MonoBehaviour
     List<Vector3> spawnLocations = new List<Vector3>();
 
 
-    [SerializeField] GameObject goldenOne;
-
+    [SerializeField] GameObject Strawberry;
     [SerializeField] GameObject Banana;
+    [SerializeField] GameObject Apple;
+    [SerializeField] GameObject Melon;
+
     [SerializeField] GameObject Eater;
     [SerializeField] NavMeshAgent spawnMesh;
 
@@ -25,16 +27,20 @@ public class SpawnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        collectibles.Add(goldenOne);
+        //All collectibles
+        collectibles.Add(Strawberry);
+        collectibles.Add(Banana);
+        collectibles.Add(Apple);
+        collectibles.Add(Melon);
 
+        //Fixed spawn locations
         spawnLocations.Add(new Vector3(0, 0.5f, 0));
         spawnLocations.Add(new Vector3(-12.5f, 0.5f, 12.5f));
         spawnLocations.Add(new Vector3(12.5f, 0.5f, 12.5f));
         spawnLocations.Add(new Vector3(-12.5f, 0.5f, -12.5f));
         spawnLocations.Add(new Vector3(12.5f, 0.5f, -12.5f));
 
-
-
+        //Adding Eater
         Invoke("SpawnEater", 1.0f);
     }
 
@@ -72,9 +78,12 @@ public class SpawnScript : MonoBehaviour
         recentSpawn = index;
         //Debug.Log("Recent spawn location: " + recentSpawn);
 
+        int collectibleList = collectibles.Count;
+        int colIndex = Random.Range(0, collectibleList);
+
         Vector3 spawnLocation = spawnLocations[index];
 
-        spawnedItems.Add(Instantiate(collectibles[0], spawnLocation, Quaternion.identity));
+        spawnedItems.Add(Instantiate(collectibles[colIndex], spawnLocation, Quaternion.identity));
 
         spawnMesh.Warp(spawnLocation);
         spawnAmount++;
