@@ -8,7 +8,15 @@ public class SpawnScript : MonoBehaviour
 
     static List<GameObject> collectibles = new List<GameObject>();
     static List<GameObject> spawnedItems = new List<GameObject>();
+
+    int recentSpawn = 0;
+
+    List<Vector3> spawnLocations = new List<Vector3>();
+
+
     [SerializeField] GameObject goldenOne;
+
+    [SerializeField] GameObject Banana;
     [SerializeField] GameObject Eater;
     [SerializeField] NavMeshAgent spawnMesh;
 
@@ -18,14 +26,24 @@ public class SpawnScript : MonoBehaviour
     void Start()
     {
         collectibles.Add(goldenOne);
-        Invoke("SpawnEater", 2.0f);
+
+        spawnLocations.Add(new Vector3(0, 0.5f, 0));
+        spawnLocations.Add(new Vector3(-12.5f, 0.5f, 12.5f));
+        spawnLocations.Add(new Vector3(12.5f, 0.5f, 12.5f));
+        spawnLocations.Add(new Vector3(-12.5f, 0.5f, -12.5f));
+        spawnLocations.Add(new Vector3(12.5f, 0.5f, -12.5f));
+
+
+
+        Invoke("SpawnEater", 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(spawnAmount < 1) {
-            SpawnCollectible();
+            //SpawnCollectible();
+            ItemSpawn();
         }
     }
 
@@ -42,20 +60,33 @@ public class SpawnScript : MonoBehaviour
     }
 
     void SpawnEater() {
-        Vector3 EaterSpawn = new Vector3(8, 1, -8);
+        Vector3 EaterSpawn = new Vector3(0, 1, -8.5f);
         Instantiate(Eater, EaterSpawn, Quaternion.identity);
     }
 
     void ItemSpawn() {
-        
+
+        int sizeOfList = spawnLocations.Count;
+        int index = Random.Range(0, sizeOfList);
+
+        recentSpawn = index;
+        //Debug.Log("Recent spawn location: " + recentSpawn);
+
+        Vector3 spawnLocation = spawnLocations[index];
+
+        spawnedItems.Add(Instantiate(collectibles[0], spawnLocation, Quaternion.identity));
+
+        spawnMesh.Warp(spawnLocation);
+        spawnAmount++;
+
     }
 
     public static void DeleteItem() {
-        //SpawnScript.Destroy(spawnedItems[0]);
+        
         Destroy(spawnedItems[0]);
-        spawnedItems.Remove(spawnedItems[0]);
+        spawnedItems.RemoveAt(0);
         spawnAmount--;
-        Debug.Log(spawnedItems.Count);
+        //Debug.Log(spawnedItems.Count);
     }
 
 }

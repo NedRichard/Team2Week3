@@ -9,7 +9,7 @@ public class CollectibleContact : MonoBehaviour
 
         if(col.CompareTag("Player") || col.CompareTag("Eater")){
 
-            Debug.Log("Item picked up!");
+            //Debug.Log("Item picked up!");
             SpawnScript.DeleteItem();
             
         }

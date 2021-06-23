@@ -15,12 +15,6 @@ public class Eater : MonoBehaviour
     {
         target=GameObject.FindGameObjectWithTag("Collectible");
         agent = this.GetComponent<NavMeshAgent>();
-
-    }
-
-    void Awake() {
-        //target=GameObject.FindGameObjectWithTag("Collectible");
-        //Debug.Log("My target is: " + target.name);
     }
 
     // Update is called once per frame

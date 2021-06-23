@@ -23,16 +23,10 @@ public class ChaserScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //SimpleChase();
         ChasePlayer();
     }
 
-    void SimpleChase() {
-        agent.destination = target.transform.position;
-    }
-
     void ChasePlayer() {
-        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
         agent.SetDestination(target.transform.position);
     }
 
