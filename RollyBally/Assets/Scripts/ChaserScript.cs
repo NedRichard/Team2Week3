@@ -34,7 +34,8 @@ public class ChaserScript : MonoBehaviour
 
         if(col.CompareTag("Player")){
 
-            Debug.Log("Game Over!");
+            //Debug.Log("Game Over!");
+            FindObjectOfType<GameManager>().EndGame();
                    
         }
         
