@@ -50,17 +50,5 @@ public class CollectibleContact : MonoBehaviour
 
         }
 
-        if(randomPick == 4) {
-
-            Debug.Log("Playing first sound");
-            soundOne.Play();
-
-        }else if(randomPick == 5) {
-
-            Debug.Log("Playing second sound");
-            soundTwo.Play();
-
-        }
-
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2027684740216451273}
   - component: {fileID: -5875943020846558251}
   - component: {fileID: 3455058102298664504}
-  - component: {fileID: -7967703970270174065}
+  - component: {fileID: -4987664659919506589}
   m_Layer: 0
   m_Name: watermelon
   m_TagString: Collectible
@@ -314,8 +314,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &-7967703970270174065
-MeshCollider:
+--- !u!65 &-4987664659919506589
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -324,7 +324,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4711208715938537054, guid: cf20745f45a31a440a4965fd4034ad2b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 2, z: 1}
+  m_Center: {x: -0.49363527, y: -4.231188e-10, z: 0.09479558}

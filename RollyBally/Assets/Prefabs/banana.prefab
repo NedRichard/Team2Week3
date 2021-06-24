@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5450815551377050306}
   - component: {fileID: 6008166348427052987}
   - component: {fileID: -3660752825282499561}
-  - component: {fileID: 2177479433294433602}
+  - component: {fileID: 4758979414855604766}
   m_Layer: 0
   m_Name: banana
   m_TagString: Collectible
@@ -314,8 +314,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!64 &2177479433294433602
-MeshCollider:
+--- !u!65 &4758979414855604766
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -324,7 +324,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 18a72cd160c0f594196aecd7e490a47f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 4.8, y: 9.4, z: 11}
+  m_Center: {x: 0.036993504, y: 3.120408, z: -2.1380153}

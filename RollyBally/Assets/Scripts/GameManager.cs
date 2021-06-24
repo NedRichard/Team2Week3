@@ -10,10 +10,13 @@ public class GameManager : MonoBehaviour
     bool gameEnded = false;
     public void EndGame() {
 
-        if(gameEnded==false) {
-            gameEnded=true;
+        if(gameEnded == false && playerScore >= 10) {
+            gameEnded = true;
             Debug.Log("Moved to Game Over!");
             //SceneManager.LoadScene("GameOver");
+        }else if(gameEnded == false && eaterScore >= 10) {
+            gameEnded = true;
+            SceneManager.LoadScene("GameOver");
         }
         
     }
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
     public void Restart() {
         playerScore = 0;
         eaterScore = 0;
+        gameEnded = false;
 
         SceneManager.LoadScene("JoniTest");
     }
