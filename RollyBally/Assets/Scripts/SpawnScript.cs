@@ -19,6 +19,8 @@ public class SpawnScript : MonoBehaviour
     [SerializeField] GameObject Apple;
     [SerializeField] GameObject Melon;
 
+
+    [SerializeField] GameObject Chaser;
     [SerializeField] GameObject Eater;
     [SerializeField] NavMeshAgent spawnMesh;
 
@@ -40,8 +42,11 @@ public class SpawnScript : MonoBehaviour
         spawnLocations.Add(new Vector3(-12.5f, 0.5f, -12.5f));
         spawnLocations.Add(new Vector3(12.5f, 0.5f, -12.5f));
 
+        Invoke("SpawnChaser", 0.5f);
+
         //Adding Eater
         Invoke("SpawnEater", 1.0f);
+
     }
 
     // Update is called once per frame
@@ -65,9 +70,15 @@ public class SpawnScript : MonoBehaviour
 
     }
 
+    void SpawnChaser() {
+        Vector3 ChaserSpawn = new Vector3(0, 1, -12.5f);
+        Instantiate(Chaser, ChaserSpawn, Quaternion.identity);
+    }
+
     void SpawnEater() {
         Vector3 EaterSpawn = new Vector3(0, 1, -8.5f);
         Instantiate(Eater, EaterSpawn, Quaternion.identity);
+
     }
 
     void ItemSpawn() {
@@ -82,7 +93,7 @@ public class SpawnScript : MonoBehaviour
             index = Random.Range(0, sizeOfList);
 
             if(index == recentSpawn) {
-                Debug.Log("Picking a new spawn");
+                //Debug.Log("Picking a new spawn");
             }
             
         } while(index == recentSpawn);

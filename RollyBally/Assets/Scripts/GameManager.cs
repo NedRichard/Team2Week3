@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreasePlayerScore() {
         playerScore++;
-        ScoreKeeper.instance.AddToPlayerScore();
+        //ScoreKeeper.instance.AddToPlayerScore();
         //Debug.Log("Player's score: " + playerScore);
 
         if(playerScore == 10) {
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseEaterScore() {
         eaterScore++;
-        ScoreKeeper.instance.AddToEaterScore();
+        //ScoreKeeper.instance.AddToEaterScore();
 
         //Debug.Log("Eater's score: " + eaterScore);
 
