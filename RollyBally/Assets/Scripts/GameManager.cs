@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static int playerScore = 0;
     public static int eaterScore = 0;
 
+    public int victoryLimit = 10;
+
     bool gameEnded = false;
     public void EndGame() {
 
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
         if(gameEnded == false) {
             gameEnded = true;
             Debug.Log("Moved to Victory Scene!");
-            SceneManager.LoadScene("VictoryScene");
+            SceneManager.LoadScene("VictoryScreen");
         }
         
     }
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
         //ScoreKeeper.instance.AddToPlayerScore();
         Debug.Log("Player's score: " + playerScore);
 
-        if(playerScore == 10) {
+        if(playerScore == victoryLimit) {
             Victory();
         }
     }
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Eater's score: " + eaterScore);
 
-        if(eaterScore == 10) {
+        if(eaterScore == victoryLimit) {
             EndGame();
         }
     }

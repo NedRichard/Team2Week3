@@ -47,6 +47,8 @@ public class SpawnScript : MonoBehaviour
         //Adding Eater
         Invoke("SpawnEater", 1.0f);
 
+        ItemSpawn();
+
     }
 
     // Update is called once per frame
