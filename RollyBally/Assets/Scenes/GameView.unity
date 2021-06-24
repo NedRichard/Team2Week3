@@ -5855,7 +5855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab39a4f9fa002c4784a7d7914297efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryLimit: 10
+  victoryLimit: 6
 --- !u!4 &2146686751
 Transform:
   m_ObjectHideFlags: 0

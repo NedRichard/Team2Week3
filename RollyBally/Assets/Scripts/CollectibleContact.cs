@@ -15,13 +15,13 @@ public class CollectibleContact : MonoBehaviour
 
         if(col.CompareTag("Player")) {
 
-            FindObjectOfType<GameManager>().IncreasePlayerScore();
             SpawnScript.DeleteItem();
+            FindObjectOfType<GameManager>().IncreasePlayerScore();
 
         } else if(col.CompareTag("Eater")) {
 
-            FindObjectOfType<GameManager>().IncreaseEaterScore();
             SpawnScript.DeleteItem();
+            FindObjectOfType<GameManager>().IncreaseEaterScore();
             
         }
 
