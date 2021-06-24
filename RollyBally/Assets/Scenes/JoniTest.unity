@@ -862,8 +862,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20ce42d0c1d18545a282330fc2918df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldenOne: {fileID: 1759488658359285582, guid: c9c68075712bdb34198bd7208f3cb96f, type: 3}
+  Strawberry: {fileID: 0}
   Banana: {fileID: 0}
+  Apple: {fileID: 0}
+  Melon: {fileID: 0}
   Eater: {fileID: 1825492308451581444, guid: 535edfd9e52e6f043ad11b5902d736d7, type: 3}
   spawnMesh: {fileID: 1046091600}
 --- !u!195 &1046091600
