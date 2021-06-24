@@ -11,6 +11,7 @@ public class ChaserScript : MonoBehaviour
     public GameObject target;
 
     [SerializeField] NavMeshAgent agent;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,9 @@ public class ChaserScript : MonoBehaviour
     }
 
     void ChasePlayer() {
+        target=GameObject.FindGameObjectWithTag("Player");
         agent.SetDestination(target.transform.position);
+        
     }
 
     void OnTriggerEnter(Collider col) {
