@@ -10,13 +10,19 @@ public class GameManager : MonoBehaviour
     bool gameEnded = false;
     public void EndGame() {
 
-        if(gameEnded == false && playerScore >= 10) {
+        if(gameEnded == false) {
             gameEnded = true;
             Debug.Log("Moved to Game Over!");
-            //SceneManager.LoadScene("GameOver");
-        }else if(gameEnded == false && eaterScore >= 10) {
-            gameEnded = true;
             SceneManager.LoadScene("GameOver");
+        }
+        
+    }
+
+    public void Victory() {
+        if(gameEnded == false) {
+            gameEnded = true;
+            Debug.Log("Moved to Victory Scene!");
+            SceneManager.LoadScene("VictoryScene");
         }
         
     }
@@ -26,20 +32,20 @@ public class GameManager : MonoBehaviour
         eaterScore = 0;
         gameEnded = false;
 
-        SceneManager.LoadScene("JoniTest");
+        SceneManager.LoadScene("GameView");
     }
 
-    void QuitApplication() {
+    public void QuitApplication() {
         Application.Quit();
     }
 
     public void IncreasePlayerScore() {
         playerScore++;
         //ScoreKeeper.instance.AddToPlayerScore();
-        //Debug.Log("Player's score: " + playerScore);
+        Debug.Log("Player's score: " + playerScore);
 
         if(playerScore == 10) {
-            EndGame();
+            Victory();
         }
     }
 
@@ -47,7 +53,7 @@ public class GameManager : MonoBehaviour
         eaterScore++;
         //ScoreKeeper.instance.AddToEaterScore();
 
-        //Debug.Log("Eater's score: " + eaterScore);
+        Debug.Log("Eater's score: " + eaterScore);
 
         if(eaterScore == 10) {
             EndGame();
