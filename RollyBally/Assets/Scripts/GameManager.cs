@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    int playerScore = 0;
-    int eaterScore = 0;
+    public static int playerScore = 0;
+    public static int eaterScore = 0;
 
     bool gameEnded = false;
     public void EndGame() {
@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
 
     public void IncreasePlayerScore() {
         playerScore++;
-        Debug.Log("Player's score: " + playerScore);
+        ScoreKeeper.instance.AddToPlayerScore();
+        //Debug.Log("Player's score: " + playerScore);
 
         if(playerScore == 10) {
             EndGame();
@@ -40,7 +41,9 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseEaterScore() {
         eaterScore++;
-        Debug.Log("Eater's score: " + eaterScore);
+        ScoreKeeper.instance.AddToEaterScore();
+
+        //Debug.Log("Eater's score: " + eaterScore);
 
         if(eaterScore == 10) {
             EndGame();

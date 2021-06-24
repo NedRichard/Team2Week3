@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8663270999165589444}
   - component: {fileID: 5734705787381110881}
   - component: {fileID: 7525853413480508587}
-  - component: {fileID: -3176007742371998927}
   - component: {fileID: 6250405427990921862}
   - component: {fileID: -5450815551377050306}
   - component: {fileID: 6008166348427052987}
   - component: {fileID: -3660752825282499561}
+  - component: {fileID: 2177479433294433602}
   m_Layer: 0
   m_Name: banana
   m_TagString: Collectible
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-3176007742371998927
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318658403702738302}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.158757, y: 8.816766, z: 9.864496}
-  m_Center: {x: 0.036993504, y: 3.120408, z: -2.1380153}
 --- !u!195 &6250405427990921862
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -327,3 +314,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!64 &2177479433294433602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8318658403702738302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 18a72cd160c0f594196aecd7e490a47f, type: 3}

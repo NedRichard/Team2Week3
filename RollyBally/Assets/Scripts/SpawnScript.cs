@@ -72,18 +72,33 @@ public class SpawnScript : MonoBehaviour
 
     void ItemSpawn() {
 
+        //Pick a spawn
         int sizeOfList = spawnLocations.Count;
-        int index = Random.Range(0, sizeOfList);
+        int index;
+
+        //Pick a different spawn point than last one
+        do {
+            
+            index = Random.Range(0, sizeOfList);
+
+            if(index == recentSpawn) {
+                Debug.Log("Picking a new spawn");
+            }
+            
+        } while(index == recentSpawn);
 
         recentSpawn = index;
         //Debug.Log("Recent spawn location: " + recentSpawn);
 
+        //Pick a collectible
         int collectibleList = collectibles.Count;
         int colIndex = Random.Range(0, collectibleList);
 
         Vector3 spawnLocation = spawnLocations[index];
 
-        spawnedItems.Add(Instantiate(collectibles[colIndex], spawnLocation, Quaternion.identity));
+        //Used Quaternion.identity
+        //Changed to collectibles[colIndex].transform.rotation
+        spawnedItems.Add(Instantiate(collectibles[colIndex], spawnLocation, collectibles[colIndex].transform.rotation));
 
         spawnMesh.Warp(spawnLocation);
         spawnAmount++;
