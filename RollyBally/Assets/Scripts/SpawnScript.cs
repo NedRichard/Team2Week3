@@ -111,10 +111,11 @@ public class SpawnScript : MonoBehaviour
 
         //Used Quaternion.identity
         //Changed to collectibles[colIndex].transform.rotation
+        spawnAmount++;
         spawnedItems.Add(Instantiate(collectibles[colIndex], spawnLocation, collectibles[colIndex].transform.rotation));
 
         spawnMesh.Warp(spawnLocation);
-        spawnAmount++;
+        
 
     }
 
